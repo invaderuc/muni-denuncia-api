@@ -1,0 +1,23 @@
+{
+  "name": "muni-denuncia-api",
+  "version": "1.0.0",
+  "description": "Back de node para app native",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/invaderuc/muni-denuncia-api.git"
+  },
+  "keywords": [
+    "escalab"
+  ],
+  "author": "invaderuc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/invaderuc/muni-denuncia-api/issues"
+  },
+  "homepage": "https://github.com/invaderuc/muni-denuncia-api#readme"
+}
