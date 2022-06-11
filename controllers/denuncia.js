@@ -1,12 +1,8 @@
 const Denuncia = require("../models/denuncia");
 const slugify = require("slugify");
-const Phone = require("../models/phone");
 
 exports.create = async (req, res) => {
   try {
-
-    req.body.slug = slugify(req.body.name);
-
     const newDenuncia = await new Denuncia(req.body).save();
     res.json(newDenuncia);
   } catch (err) {
@@ -26,7 +22,7 @@ exports.listAll = async (req, res) => {
   res.json(Denuncias);
 };
 
-exports.DenunciasCount = async (req, res) => {
+exports.denunciasCount = async (req, res) => {
   let total = await Denuncia.find({ status: "Active" }).estimatedDocumentCount().exec();
   res.json(total);
 };
@@ -78,13 +74,13 @@ exports.read = async (req, res) => {
     status: "Active",
   }).exec();
   
-  const phones = await Phone.find({ denuncia, status: "Active" })
+  const denuncias = await Denuncia.find({ denuncia, status: "Active" })
     .populate("denuncia")
     .exec();
 
   res.json({
     denuncia,
-    phones,
+    denuncias,
   });
 };
 

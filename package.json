@@ -4,7 +4,7 @@
   "description": "Back de node para app native",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "nodemon server.js",
     "start": "node server.js"
   },
   "repository": {
@@ -19,5 +19,23 @@
   "bugs": {
     "url": "https://github.com/invaderuc/muni-denuncia-api/issues"
   },
-  "homepage": "https://github.com/invaderuc/muni-denuncia-api#readme"
+  "homepage": "https://github.com/invaderuc/muni-denuncia-api#readme",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cloudinary": "1.23.0",
+    "cors": "2.8.5",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.5.0",
+    "mongoose": "5.10.2",
+    "redis": "3.1.2",
+    "slugify": "1.4.5",
+    "uniqueid": "^1.0.0"
+  },
+  "devDependencies": {
+    "morgan": "1.10.0",
+    "nodemon": "2.0.12",
+    "response-time": "2.3.2"
+  }
 }

@@ -4,7 +4,10 @@ const morgan = require("morgan");
 const cors = require("cors");
 const { readdirSync } = require("fs");
 require("dotenv").config();
+var { buildSchema } = require('graphql');
+const { graphqlHTTP } = require('express-graphql');
 
+const schema = require(("./graphql/schema"));
 // app middleware express
 const app = express();
 
@@ -17,6 +20,12 @@ app.use(express.json({ limit: "2mb" }));
  
 app.use(cors());
 console.log(readdirSync("./routes"));
+
+app.use('/graphql', graphqlHTTP({
+	schema: schema,
+	//rootValue: root,
+	graphiql: true
+}));
 
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 
