@@ -6,9 +6,13 @@ const denuncias = {
     type: new GraphQLList(DenunciaType),
     async resolve(){
         const denuncias = await Denuncia.find();
-        console.log(denuncias);
 
-        return denuncias;
+        var result = {  
+            info: {count:denuncias.count()},  
+            results : denuncias
+        };
+
+        return result;
     }
 }
 
