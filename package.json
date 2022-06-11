@@ -34,7 +34,6 @@
     "uniqueid": "^1.0.0"
   },
   "devDependencies": {
-    "morgan": "1.10.0",
     "nodemon": "2.0.12",
     "response-time": "2.3.2"
   }
